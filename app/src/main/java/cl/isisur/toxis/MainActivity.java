@@ -1,6 +1,5 @@
 package cl.isisur.toxis;
 
-
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -31,12 +30,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FusedLocationProviderClient fusedLocationClient;
     DatabaseReference mDatabase;
     private Button mBtnMaps;
+    private Button btnCalcular;
     private EditText etc1;
     private EditText etc2;
     private EditText etc3;
     private EditText etc4;
     private TextView tvresul;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +43,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        etc1= (EditText)findViewById(R.id.txt_certamen1);
-        etc2= (EditText)findViewById(R.id.txt_certamen2);
-        etc3= (EditText)findViewById(R.id.txt_certamen3);
-        etc4= (EditText)findViewById(R.id.txt_certamen4);
-        tvresul= (TextView)findViewById(R.id.tv_resultado);
+        etc1 = (EditText) findViewById(R.id.txt_certamen1);
+        etc2 = (EditText) findViewById(R.id.txt_certamen2);
+        etc3 = (EditText) findViewById(R.id.txt_certamen3);
+        etc4 = (EditText) findViewById(R.id.txt_certamen4);
+        tvresul = (TextView) findViewById(R.id.tv_resultado);
+
+        btnCalcular = (Button) findViewById(R.id.btn_calcular);
+        btnCalcular.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                calcular(v);
+            }
+        });
 
         // Adjust the insets for the view
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -58,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
-        mDatabase = FirebaseDatabase.getInstance() .getReference();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
         mBtnMaps = findViewById(R.id.btnMaps);
         mBtnMaps.setOnClickListener(this);
 
@@ -78,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onSuccess(Location location) {
                         if (location != null) {
-                            Log.e("Latitud:  ", +location.getLatitude()+"Longitud:  "+ location.getLongitude() );
+                            Log.e("Latitud:  ", +location.getLatitude() + "Longitud:  " + location.getLongitude());
                             Map<String, Object> latlang;
                             latlang = new HashMap<>();
                             latlang.put("latitud", location.getLatitude());
@@ -127,6 +134,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             tvresul.setText("Por favor, ingresa solo números válidos.");
         }
     }
-
-
 }
