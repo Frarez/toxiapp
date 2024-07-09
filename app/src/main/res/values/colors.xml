@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="background_color">#2B2B2B</color>
+    <color name="card_background">#3C3C3C</color>
+    <color name="button_background">#D32F2F</color>
+    <color name="button_text">#FFFFFF</color> <!-- Blanco -->
+    <color name="highlight">#FF4081</color>
 </resources>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/background_color">
+
+    <EditText
+        android:id="@+id/et_search_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese nombre de usuario"
+        android:layout_marginBottom="8dp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@color/highlight"/>
+
+    <Button
+        android:id="@+id/btn_search_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Buscar Usuario"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/button_background"
+        android:textColor="@color/button_text"/>
+
+    <TextView
+        android:id="@+id/tv_latitud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Latitud: "
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="8dp"/>
+
+
+    <TextView
+        android:id="@+id/tv_longitud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Longitud: "
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="16dp"/>
+
+
+    <TextView
+        android:id="@+id/tv_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Usuario: "
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="16dp"/>
+
+
+    <Button
+        android:id="@+id/btn_ir_maps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ver en Mapa"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/button_background"
+        android:textColor="@color/button_text"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Usuarios Disponibles"
+        android:textSize="20sp"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"
+        android:textColor="@color/highlight"/>
+
+    <ListView
+        android:id="@+id/list_users"
+        android:textColor="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/highlight"
+        android:dividerHeight="1dp"/>
+</LinearLayout>

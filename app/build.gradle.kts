@@ -42,8 +42,9 @@ dependencies {
 
 
     implementation("com.google.android.gms:play-services-location:21.2.0")
-    implementation("com.google.firebase:firebase-analytics")
     implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-database:20.0.3")
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
